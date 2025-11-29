@@ -1,7 +1,7 @@
 import { Hono } from "hono";
 import { authMiddleware } from "../lib/authMiddleware";
 import { getPrisma } from "../utils/prismaFunciton";
-import { blogSchema, updateBlogSchema } from "../lib/schema";
+import { blogSchema, updateBlogSchema } from "@repo/types";
 
 type Env = {
     Bindings: {

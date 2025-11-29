@@ -8,7 +8,7 @@ export async function signAuthToken(payload: Record<string, any>, JWT_SECRET: st
         JWT_SECRET,
         'HS256'
     );
-    return token;
+    return `Bearer ${token}`;
 }
 
 export async function verifyAuthToken(token: string, JWT_SECRET: string) {

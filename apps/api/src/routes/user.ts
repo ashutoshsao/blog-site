@@ -1,6 +1,6 @@
 import { Hono } from "hono";
 import { getPrisma } from "../utils/prismaFunciton";
-import { userSchema } from "../lib/schema";
+import { userSchema } from "@repo/types";
 import { hashPassword, verifyPassword } from "../lib/passHash";
 import { signAuthToken } from "../lib/auth";
 import z from "zod";
@@ -52,7 +52,7 @@ user.post('/signup', async (c) => {
         const token = await signAuthToken(payload, c.env.JWT_SECRET)
 
         return c.json({
-            message: 'Singup successful',
+            message: 'Signup successful',
             token: token
         }, 200);
 

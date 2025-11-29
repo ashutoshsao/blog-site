@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "backend",
+  "name": "blog-site-backend",
   "main": "src/index.ts",
   "compatibility_date": "2025-11-26"
   // "compatibility_flags": [
@@ -15,7 +15,7 @@
   //     "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
   //   }
   // ],
-  // "r2_buckets": [
+  // "r2_buckets": [q
   //   {
   //     "binding": "MY_BUCKET",
   //     "bucket_name": "my-bucket"

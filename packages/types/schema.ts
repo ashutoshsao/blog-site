@@ -1,10 +1,11 @@
-import z from "zod"
+import { z } from "zod"
 
 export const userSchema = z.object({
-    email: z.email(),
     name: z.string().optional(),
+    email: z.email(),
     password: z.string().min(1)
 })
+export type userInput = z.infer<typeof userSchema>
 
 export const blogSchema = z.object({
     title: z.string(),
@@ -12,6 +13,8 @@ export const blogSchema = z.object({
     published: z.boolean().optional(),
     authorId: z.string()
 })
+
+export type blogInput = z.infer<typeof blogSchema>
 
 export const updateBlogSchema = blogSchema.pick({
     title: true,

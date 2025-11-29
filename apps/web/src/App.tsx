@@ -1,20 +1,16 @@
-import { Signup } from '@repo/ui/Signup'
-import { useState } from 'react'
-import "./App.css"
+import { Blog, Signin, Signup } from '@repo/ui'
+import { Routes, Route, Link, useNavigate } from 'react-router-dom'
 function App() {
-  const [count, setCount] = useState(0)
-
+  const backendUrl = import.meta.env.VITE_BACKEND_PROD;
+  const navigate = useNavigate()
+  const homepageHandler = () => { navigate("/blog") }
   return (
-    <>
-
-      <div>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}</button>
-      </div>
-      <br />
-      <br />
-      <Signup />
-    </>
+    <Routes>
+      <Route path="/signup" element={<Signup Link={Link} backendUrl={backendUrl} sendDetailSuccess={homepageHandler} />} />
+      <Route path="/signin" element={<Signin Link={Link} backendUrl={backendUrl} sendDetailSuccess={homepageHandler} />} />
+      <Route path="/blog" element={<Blog />} />
+      {/* <Route path="/" element={<Langing />} /> */}
+    </Routes>
   )
 }
 
