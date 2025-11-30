@@ -6,7 +6,7 @@ type blogCardProps = {
 }
 
 export const BlogCard = ({ authorName, publishedDate, title, content }: blogCardProps) => {
-    return <div className="border-b border-gray-300 flex items-center py-4">
+    return <div className="border-b border-gray-300 flex items-center py-4 px-4 2xl:px-0">
         <div className="grid grid-cols gap-3 py-4">
             <div className="flex flex-cols items-center gap-2">
                 {<Avatar name={authorName} />}

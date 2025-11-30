@@ -46,7 +46,7 @@ export const Signup = ({ Link, backendUrl, sendDetailSuccess }: SigninProps) => 
         <div className="h-screen flex justify-center bg-white">
             <div className="flex flex-col font-sans justify-center items-center gap-4 p-4">
                 <Header Link={Link} heading="Create an account" subHeading="Already have an account?" redirect="Login" ref="signin" />
-                <div className="flex flex-col gap-4 w-sm">
+                <div className="flex flex-col gap-4 w-xs">
                     <LabelledInput label="Username" placeholder="Alexander" onChange={(e) => {
                         setPostinput({
                             ...postInput,

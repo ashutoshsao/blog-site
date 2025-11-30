@@ -45,8 +45,8 @@ export const Signin = ({ Link, backendUrl, sendDetailSuccess }: SignupProps) => 
     return <div className="grid grid-cols-1 xl:grid-cols-2">
         <div className="h-screen flex justify-center bg-white">
             <div className="flex flex-col font-sans justify-center items-center gap-4 p-4">
-                <Header Link={Link} heading="Login" subHeading="Don't have an account?" redirect="Login" ref="signup" />
-                <div className="flex flex-col gap-4 w-sm">
+                <Header Link={Link} heading="Login" subHeading="Don't have an account?" redirect="Signup" ref="signup" />
+                <div className="flex flex-col gap-4 w-xs">
                     <LabelledInput label="Email" placeholder="Alexander@gmail.com" onChange={(e) => {
                         setPostinput({
                             ...postInput,

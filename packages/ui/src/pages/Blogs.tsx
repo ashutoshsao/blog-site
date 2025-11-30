@@ -25,7 +25,7 @@ export const Blogs = ({ Link, backendUrl }: blogsProp) => {
     else {
         return <div><AppBar />
             <div className="flex justify-center">
-                <div className="justify-center ">
+                <div className="justify-center">
                     {blogs.map((blog: blog) => <Link key={blog.id} to={`/blog/${blog.id}`}> <BlogCard authorName={blog.author.name} title={blog.title} content={blog.content} publishedDate={new Date(blog.updatedAt).toLocaleDateString("en-US", {
                         month: "short",
                         day: "numeric",
