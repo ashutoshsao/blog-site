@@ -1,17 +1,23 @@
-import { Blog, Signin, Signup } from '@repo/ui'
-import { Routes, Route, Link, useNavigate } from 'react-router-dom'
+import { Blogs, Signin, Signup, Blog } from '@repo/ui'
+import { Routes, Route, Link, useNavigate, useParams } from 'react-router-dom'
+import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query'
+
+const queryClient = new QueryClient()
+
 function App() {
   const backendUrl = import.meta.env.VITE_BACKEND_PROD;
   const navigate = useNavigate()
-  const homepageHandler = () => { navigate("/blog") }
+  const homepageHandler = () => { navigate("/blogs") }
   return (
-    <Routes>
-      <Route path="/signup" element={<Signup Link={Link} backendUrl={backendUrl} sendDetailSuccess={homepageHandler} />} />
-      <Route path="/signin" element={<Signin Link={Link} backendUrl={backendUrl} sendDetailSuccess={homepageHandler} />} />
-      <Route path="/blog" element={<Blog />} />
-      {/* <Route path="/" element={<Langing />} /> */}
-    </Routes>
-  )
+    <QueryClientProvider client={queryClient}>
+      <Routes>
+        <Route path="/signup" element={<Signup Link={Link} backendUrl={backendUrl} sendDetailSuccess={homepageHandler} />} />
+        <Route path="/signin" element={<Signin Link={Link} backendUrl={backendUrl} sendDetailSuccess={homepageHandler} />} />
+        <Route path="/blogs" element={<Blogs Link={Link} backendUrl={backendUrl} />} />
+        <Route path="/blog/:id" element={<Blog useParams={useParams} backendUrl={backendUrl} useQuery={useQuery} />} />
+        {/* <Route path="/" element={<Langing />} /> */}
+      </Routes>
+    </QueryClientProvider>)
 }
 
 export default App

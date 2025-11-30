@@ -85,8 +85,22 @@ blog.put('/:id', async (c) => {
 blog.get('/bulk', async (c) => {
     try {
         const prisma = getPrisma(c.env);
-        const blogs = await prisma.blog.findMany({})
-        return c.json(blogs, 200)
+        const blogs = await prisma.blog.findMany({
+            select: {
+                id: true,
+                title: true,
+                content: true,
+                createdat: true,
+                updatedAt: true,
+                author: {
+                    select: {
+                        name: true
+                    }
+                }
+            }
+        }
+        )
+        return c.json({ blogs }, 200)
     }
     catch (error) {
         console.error("error while fetching blogs:", error);
@@ -101,6 +115,18 @@ blog.get('/:id', async (c) => {
         const blog = await prisma.blog.findFirst({
             where: {
                 id
+            },
+            select: {
+                id: true,
+                title: true,
+                content: true,
+                createdat: true,
+                updatedAt: true,
+                author: {
+                    select: {
+                        name: true
+                    }
+                }
             }
         })
 
@@ -108,7 +134,7 @@ blog.get('/:id', async (c) => {
             return c.json({ error: "No blog found!" }, 400)
         }
 
-        return c.json(blog, 200)
+        return c.json({ blog }, 200)
     }
     catch (error) {
         console.error("error while fetching blog:", error);

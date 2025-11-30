@@ -1,6 +1,6 @@
 "use client"
 
-import { userInput } from "@repo/types"
+import type { userInput } from "@repo/types"
 import { useState } from "react"
 import { Header } from "../components/Header"
 import { LabelledInput } from "../components/LabelledInput"
@@ -23,8 +23,7 @@ export const Signin = ({ Link, backendUrl, sendDetailSuccess }: SignupProps) => 
     const SendDetails = async () => {
         try {
             const res = await axios.post(`${backendUrl}/api/v1/user/signin`, postInput);
-            const token = res.data.split(" ")[1];
-
+            const token = res.data.token;
             if (token) {
                 localStorage.setItem("token", token);
             }
