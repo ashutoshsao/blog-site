@@ -1,0 +1,13 @@
+{
+    "projects": {
+        "web": {
+            "source": "apps/web"
+        }
+    },
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/index.html"
+        }
+    ]
+}
