@@ -1,4 +1,4 @@
-import { Blogs, Signin, Signup, Blog } from '@repo/ui'
+import { Blogs, Signin, Signup, Blog, Landing } from '@repo/ui'
 import { Routes, Route, Link, useNavigate, useParams } from 'react-router-dom'
 import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query'
 
@@ -15,7 +15,7 @@ function App() {
         <Route path="/signin" element={<Signin Link={Link} backendUrl={backendUrl} sendDetailSuccess={homepageHandler} />} />
         <Route path="/blogs" element={<Blogs Link={Link} backendUrl={backendUrl} />} />
         <Route path="/blog/:id" element={<Blog useParams={useParams} backendUrl={backendUrl} useQuery={useQuery} />} />
-        {/* <Route path="/" element={<Langing />} /> */}
+        <Route path="/" element={<Landing />} />
       </Routes>
     </QueryClientProvider>)
 }
