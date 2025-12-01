@@ -70,7 +70,7 @@ export const Publish = ({ Link, backendUrl, ref, createPageRef, onPublishSuccess
                         })
                     }}
                         type="text"
-                        className="w-full bg-transparent border-none text-5xl font-serif font-bold placeholder:text-gray-300 focus:outline-none focus:ring-0 px-0"
+                        className="w-full bg-transparent border-none text-5xl font-sans font-bold placeholder:text-gray-300 focus:outline-none focus:ring-0 px-0"
                         placeholder="Title"
                         autoFocus
                     />
@@ -82,7 +82,7 @@ export const Publish = ({ Link, backendUrl, ref, createPageRef, onPublishSuccess
                             content: e.target.value
                         })
                     }}
-                        className="w-full bg-transparent border-none text-xl font-serif placeholder:text-gray-300 focus:outline-none focus:ring-0 resize-none px-0 min-h-[calc(100vh-200px)]"
+                        className="w-full bg-transparent border-none text-xl font-sans placeholder:text-gray-300 focus:outline-none focus:ring-0 resize-none px-0 min-h-[calc(100vh-200px)]"
                         placeholder="Tell your story..."
                     ></textarea>
                 </div>
