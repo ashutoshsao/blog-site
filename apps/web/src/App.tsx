@@ -13,8 +13,8 @@ function App() {
       <Routes>
         <Route path="/signup" element={<Signup Link={Link} backendUrl={backendUrl} sendDetailSuccess={homepageHandler} />} />
         <Route path="/signin" element={<Signin Link={Link} backendUrl={backendUrl} sendDetailSuccess={homepageHandler} />} />
-        <Route path="/blogs" element={<Blogs Link={Link} backendUrl={backendUrl} />} />
-        <Route path="/blog/:id" element={<Blog useParams={useParams} backendUrl={backendUrl} useQuery={useQuery} />} />
+        <Route path="/blogs" element={<Blogs ref="/blogs" Link={Link} backendUrl={backendUrl} />} />
+        <Route path="/blog/:id" element={<Blog ref="/blogs" Link={Link} useParams={useParams} backendUrl={backendUrl} useQuery={useQuery} />} />
         <Route path="/" element={<Landing />} />
       </Routes>
     </QueryClientProvider>)

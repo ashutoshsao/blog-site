@@ -1,10 +1,15 @@
-import { Avatar } from "./BlogCard"
-
-export const AppBar = () => {
-    return <div className="border-b flex justify-between items-center p-2">
-        <div>
-            Medium
-        </div>
+import { Avatar } from "./Avatar"
+type appBarProps = {
+    Link: any
+    ref: string
+}
+export const AppBar = ({ Link, ref }: appBarProps) => {
+    return <div className="border-b flex justify-between items-center p-2 px-8 bg-fuchsia-300">
+        <Link to={ref}>
+            <div>
+                Medium
+            </div>
+        </Link>
         <div onClick={() => {
             alert("hello")
         }} className="cursor-pointer">

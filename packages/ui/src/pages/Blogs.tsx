@@ -4,6 +4,7 @@ import { useBlogs } from "../hooks/useBlogs"
 type blogsProp = {
     backendUrl: string
     Link: any
+    ref: string
 }
 
 type blog = {
@@ -15,7 +16,7 @@ type blog = {
     updatedAt: string
 }
 
-export const Blogs = ({ Link, backendUrl }: blogsProp) => {
+export const Blogs = ({ Link, backendUrl, ref }: blogsProp) => {
     const { loading, blogs } = useBlogs({ backendUrl })
     if (loading) {
         return <div>
@@ -23,7 +24,7 @@ export const Blogs = ({ Link, backendUrl }: blogsProp) => {
         </div>
     }
     else {
-        return <div><AppBar />
+        return <div><AppBar Link={Link} ref={ref} />
             <div className="flex justify-center">
                 <div className="justify-center">
                     {blogs.map((blog: blog) => <Link key={blog.id} to={`/blog/${blog.id}`}> <BlogCard authorName={blog.author.name} title={blog.title} content={blog.content} publishedDate={new Date(blog.updatedAt).toLocaleDateString("en-US", {

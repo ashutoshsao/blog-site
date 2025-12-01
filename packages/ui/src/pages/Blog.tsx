@@ -1,12 +1,15 @@
 import { useBlog } from "../hooks/useBlog";
-
+import { FullBlog } from "../components/FullBlog";
+import { AppBar } from "../components/AppBar";
 type blogProps = {
     backendUrl: string
     useQuery: any
     useParams: any
+    ref: string
+    Link: any
 }
 
-export const Blog = ({ backendUrl, useQuery, useParams }: blogProps) => {
+export const Blog = ({ backendUrl, useQuery, useParams, ref, Link }: blogProps) => {
     const { id } = useParams(); // get id from route
     const { loading, data, error } = useBlog({ id: id || "", backendUrl, useQuery });
     if (loading) {
@@ -16,24 +19,9 @@ export const Blog = ({ backendUrl, useQuery, useParams }: blogProps) => {
     }
     if (error) { console.log(error) }
     return <div>
-        <div className="flex justify-center">
-            <div className="max-w-xl pt-12">
-                <div className="text-5xl font-extrabold">
-                    {data.title}
-                </div>
-                <div className="text-slate-500 pt-2">
-                    {
-                        new Date(data.updatedAt).toLocaleDateString("en-US", {
-                            month: "short",
-                            day: "numeric",
-                            year: "numeric",
-                        })}
-
-                </div>
-                <div className="pt-4">
-                    {data.content}
-                </div>
-            </div>
+        <AppBar Link={Link} ref={ref} />
+        <div className="flex justify-center p-8">
+            <FullBlog data={data} />
         </div>
     </div>
 }
