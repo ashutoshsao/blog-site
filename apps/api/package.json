@@ -7,13 +7,15 @@
     "cf-typegen": "wrangler types --env-interface CloudflareBindings"
   },
   "dependencies": {
-    "@repo/types": "workspace:*",
     "@prisma/client": "^6.17.0",
     "@prisma/extension-accelerate": "^3.0.0",
+    "@repo/types": "workspace:*",
+    "bcryptjs": "^3.0.3",
     "hono": "^4.10.6",
     "zod": "^4.1.13"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^3.0.0",
     "dotenv": "^17.2.3",
     "prisma": "^6.17.0",
     "wrangler": "^4.4.0"

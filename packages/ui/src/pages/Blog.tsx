@@ -22,7 +22,8 @@ export const Blog = ({ backendUrl, useQuery, useParams, ref, Link, createPageRef
             </div>
         </div>
     }
-    if (error) { console.log(error) }
+    if (error) {
+    }
     return <div>
         <AppBar Link={Link} ref={ref} createPageRef={createPageRef} />
         <div className="flex justify-center p-8">

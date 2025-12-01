@@ -29,7 +29,7 @@ user.post('/signup', async (c) => {
             where: { email: email }
         })
         if (existingUser?.id) {
-            return c.json({ erorr: "user already exists" }, 411);
+            return c.json({ error: "user already exists" }, 409);
         }
 
         // Hash the password before storing
