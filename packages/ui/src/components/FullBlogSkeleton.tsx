@@ -1,5 +1,3 @@
-import { Circle } from "./BlogCard"
-
 export const FullBlogSkeleton = () => {
     return <div role="status" className="animate-pulse font-sans lg:grid lg:grid-cols-12 gap-4 xl:w-[80%] w-full p-4">
         <div className="lg:grid lg:col-span-8">

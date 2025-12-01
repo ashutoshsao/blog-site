@@ -1,5 +1,4 @@
 import { Avatar } from "./Avatar"
-import { Button } from "./Button"
 type appBarProps = {
     Link: any
     ref: string
