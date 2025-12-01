@@ -18,7 +18,7 @@ function App() {
         <Route path="/blogs" element={<Blogs ref="/blogs" Link={Link} backendUrl={backendUrl} createPageRef={createPageHandler} />} />
         <Route path="/blog/:id" element={<Blog ref="/blogs" Link={Link} useParams={useParams} backendUrl={backendUrl} useQuery={useQuery} createPageRef={createPageHandler} />} />
         <Route path="/publish" element={<Publish ref="/blogs" Link={Link} backendUrl={backendUrl} createPageRef={createPageHandler} onPublishSuccess={publishSuccessHandler} />} />
-        <Route path="/" element={<Landing />} />
+        <Route path="/" element={<Landing Link={Link} />} />
       </Routes>
     </QueryClientProvider>)
 }
