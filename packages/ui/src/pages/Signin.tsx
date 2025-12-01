@@ -4,7 +4,7 @@ import type { userInput } from "@repo/types"
 import { useState } from "react"
 import { Header } from "../components/Header"
 import { LabelledInput } from "../components/LabelledInput"
-import { Button } from "../components/button"
+import { Button } from "../components/Button"
 import { Quote } from "../components/Quote"
 import axios from "axios"
 
